@@ -17,6 +17,7 @@ namespace DotNetMPI
 
             // Get device
             var device = torch.cuda.is_available() ? torch.CUDA : torch.CPU;
+            Console.WriteLine($"device: {device}");
 
             // Read the categories
             var categories = File.ReadAllLines("imagenet_classes.txt").ToArray();
