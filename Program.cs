@@ -1,45 +1,31 @@
 ﻿
 using TorchSharp;
-using static TorchSharp.torchvision.io;
 
-class ImageClassification
+namespace DotNetMPI
 {
-    static void Main(string[] args)
+    class DotNetMPI
     {
-        // Get device
-        var device = torch.cuda.is_available() ? torch.CUDA : torch.CPU;
-
-        // Read the categories
-        var categories = File.ReadAllLines("imagenet_classes.txt").ToArray();
-
-        // Get model
-        var model = torchvision.models.inception_v3(num_classes: categories.Length, skipfc: false, weights_file: "inception_v3.dat");
-        model.eval();
-        model.to(device);
-
-        // Image preprocessing
-        var preprocess = torchvision.transforms.Compose(
-            torchvision.transforms.ConvertImageDtype(torch.ScalarType.Float32),
-            torchvision.transforms.Resize(299, 299)
-        );
-
-        var images = Directory.GetFiles("images", "*.jpg", SearchOption.AllDirectories);
-        foreach (var file in images)
+        static void Main(string[] args)
         {
-            var img = read_image(file, ImageReadMode.RGB, new SkiaImager());
-            var inputTensor = preprocess.call(img).to(device);
-            var input_batch = inputTensor.unsqueeze(0);
-            input_batch = input_batch.to(device);
-            using (torch.no_grad())
+            if (args.Length < 1)
             {
-                var output = model.call(input_batch);
-                var probabilities = torch.nn.functional.softmax(output[0], dim: 0);
-                var (topProb, topCatId) = torch.topk(probabilities, 1);
-                Console.WriteLine($@"
-                    File: {file}
-                    Label: {categories[topCatId[0].ToInt32()]}
-                    Accuracy: {topProb[0].item<float>()}
-                ");
+                Console.WriteLine("command: dotnet-mpi -sequential|-distributed");
+                Console.WriteLine("WARNING: on distributed mode, the command must be called with mpiexec.");
+                Console.WriteLine("Ex: mpiexec -n <number-of-processes> dotnet-mpi -distributed <path> <batch-size>");
+                Environment.Exit(0);
+            }
+
+            var mode = args[0];
+            switch (mode)
+            {
+                case "-sequential":
+                    Sequential.ImageRecognition();
+                    break;
+                case "-distributed":
+                    Distributed.ImageRecognition();
+                    break;
+                default:
+                    throw new Exception("Invalid mode");
             }
         }
     }
