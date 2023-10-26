@@ -67,10 +67,9 @@ namespace DotNetMPI
 
                         using (var stream = new MemoryStream(record.Data!))
                         {
-                            var img = read_image(stream, ImageReadMode.RGB, new SkiaImager());
-                            var inputTensor = preprocess.call(img).to(device);
+                            var img = read_image(stream, ImageReadMode.RGB, new SkiaImager()).to(device);
+                            var inputTensor = preprocess.call(img);
                             var input_batch = inputTensor.unsqueeze(0);
-                            input_batch = input_batch.to(device);
                             using (torch.no_grad())
                             {
                                 var output = model.call(input_batch);

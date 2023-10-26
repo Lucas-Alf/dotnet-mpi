@@ -11,8 +11,8 @@
     <PackageReference Include="MPI.NET" Version="1.4.0" />
     <PackageReference Include="TorchSharp" Version="0.100.6" />
     <PackageReference Include="TorchVision" Version="0.100.6" />
-    <PackageReference Include="libtorch-cpu-win-x64" Version="2.0.1.1" />
-    <!-- <PackageReference Include="libtorch-cuda-11.7-win-x64" Version="2.0.1.1" /> -->
+    <!-- <PackageReference Include="libtorch-cpu-win-x64" Version="2.0.1.1" /> -->
+    <PackageReference Include="libtorch-cuda-11.7-win-x64" Version="2.0.1.1" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' ">
