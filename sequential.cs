@@ -8,7 +8,6 @@ namespace DotNetMPI
     {
         public static void ImageRecognition()
         {
-            Console.WriteLine($"TorchVersion: {torch.__version__}");
             Console.WriteLine($"Mode: sequential");
 
             // Remove old results
@@ -30,7 +29,7 @@ namespace DotNetMPI
             // Image preprocessing
             var preprocess = torchvision.transforms.Compose(
                 torchvision.transforms.ConvertImageDtype(torch.ScalarType.Float32),
-                torchvision.transforms.Resize(299, 299)
+                torchvision.transforms.Resize(1000, 1000)
             );
 
             var images = Directory.GetFiles("images", "*.jpg", SearchOption.AllDirectories);

@@ -1,243 +1,275 @@
-{"file":"images\\Cheetah\\Cheetah_001.jpg","label":"cheetah","accuracy":0.9120953}
-{"file":"images\\Cheetah\\Cheetah_002.jpg","label":"cheetah","accuracy":0.9449794}
-{"file":"images\\Cheetah\\Cheetah_003.jpg","label":"cheetah","accuracy":0.90002525}
-{"file":"images\\Cheetah\\Cheetah_004.jpg","label":"cheetah","accuracy":0.9620886}
-{"file":"images\\Cheetah\\Cheetah_005.jpg","label":"cheetah","accuracy":0.89651984}
-{"file":"images\\Cheetah\\Cheetah_006.jpg","label":"cheetah","accuracy":0.8892837}
-{"file":"images\\Cheetah\\Cheetah_007.jpg","label":"cheetah","accuracy":0.95786446}
-{"file":"images\\Cheetah\\Cheetah_008.jpg","label":"cheetah","accuracy":0.96257466}
-{"file":"images\\Cheetah\\Cheetah_009.jpg","label":"cheetah","accuracy":0.91270196}
-{"file":"images\\Cheetah\\Cheetah_010.jpg","label":"cheetah","accuracy":0.8572501}
-{"file":"images\\Cheetah\\Cheetah_011.jpg","label":"cheetah","accuracy":0.88354486}
-{"file":"images\\Cheetah\\Cheetah_012.jpg","label":"cheetah","accuracy":0.88596094}
-{"file":"images\\Cheetah\\Cheetah_013.jpg","label":"cheetah","accuracy":0.94230187}
-{"file":"images\\Cheetah\\Cheetah_014.jpg","label":"cheetah","accuracy":0.9136421}
-{"file":"images\\Cheetah\\Cheetah_015.jpg","label":"cheetah","accuracy":0.9256713}
-{"file":"images\\Cheetah\\Cheetah_016.jpg","label":"cheetah","accuracy":0.9242698}
-{"file":"images\\Cheetah\\Cheetah_017.jpg","label":"cheetah","accuracy":0.898804}
-{"file":"images\\Cheetah\\Cheetah_018.jpg","label":"cheetah","accuracy":0.5134795}
-{"file":"images\\Cheetah\\Cheetah_019.jpg","label":"cheetah","accuracy":0.9328287}
-{"file":"images\\Cheetah\\Cheetah_020.jpg","label":"cheetah","accuracy":0.85940266}
-{"file":"images\\Cheetah\\Cheetah_021.jpg","label":"cheetah","accuracy":0.85522264}
-{"file":"images\\Cheetah\\Cheetah_022.jpg","label":"cheetah","accuracy":0.9341225}
-{"file":"images\\Cheetah\\Cheetah_023.jpg","label":"cheetah","accuracy":0.93565077}
-{"file":"images\\Cheetah\\Cheetah_024.jpg","label":"cheetah","accuracy":0.9566856}
-{"file":"images\\Cheetah\\Cheetah_025.jpg","label":"cheetah","accuracy":0.89339423}
-{"file":"images\\Cheetah\\Cheetah_026.jpg","label":"cheetah","accuracy":0.8931743}
-{"file":"images\\Cheetah\\Cheetah_027.jpg","label":"cheetah","accuracy":0.91411436}
-{"file":"images\\Cheetah\\Cheetah_028.jpg","label":"cheetah","accuracy":0.9460346}
-{"file":"images\\Cheetah\\Cheetah_029.jpg","label":"cheetah","accuracy":0.93642026}
-{"file":"images\\Cheetah\\Cheetah_030.jpg","label":"cheetah","accuracy":0.9560663}
-{"file":"images\\Cheetah\\Cheetah_031.jpg","label":"cheetah","accuracy":0.9367441}
-{"file":"images\\Cheetah\\Cheetah_032.jpg","label":"cheetah","accuracy":0.80104953}
-{"file":"images\\Cheetah\\Cheetah_033.jpg","label":"cheetah","accuracy":0.9432589}
-{"file":"images\\Cheetah\\Cheetah_034.jpg","label":"cheetah","accuracy":0.7635264}
-{"file":"images\\Cheetah\\Cheetah_035.jpg","label":"cheetah","accuracy":0.7264044}
-{"file":"images\\Cheetah\\Cheetah_036.jpg","label":"hippopotamus","accuracy":0.27743793}
-{"file":"images\\Cheetah\\Cheetah_037.jpg","label":"cheetah","accuracy":0.9333776}
-{"file":"images\\Cheetah\\Cheetah_038.jpg","label":"cheetah","accuracy":0.73491824}
-{"file":"images\\Cheetah\\Cheetah_039.jpg","label":"cheetah","accuracy":0.6250748}
-{"file":"images\\Cheetah\\Cheetah_040.jpg","label":"cheetah","accuracy":0.8595981}
-{"file":"images\\Cheetah\\Cheetah_041.jpg","label":"cheetah","accuracy":0.91588897}
-{"file":"images\\Cheetah\\Cheetah_042.jpg","label":"cheetah","accuracy":0.9041968}
-{"file":"images\\Cheetah\\Cheetah_043.jpg","label":"cheetah","accuracy":0.90860426}
-{"file":"images\\Cheetah\\Cheetah_044.jpg","label":"cheetah","accuracy":0.9424134}
-{"file":"images\\Cheetah\\Cheetah_045.jpg","label":"cheetah","accuracy":0.82114476}
-{"file":"images\\Cheetah\\Cheetah_046.jpg","label":"cheetah","accuracy":0.60816646}
-{"file":"images\\Cheetah\\Cheetah_047.jpg","label":"cheetah","accuracy":0.95814496}
-{"file":"images\\Cheetah\\Cheetah_048.jpg","label":"cheetah","accuracy":0.8728739}
-{"file":"images\\Cheetah\\Cheetah_049.jpg","label":"cheetah","accuracy":0.84987}
-{"file":"images\\Cheetah\\Cheetah_050.jpg","label":"cheetah","accuracy":0.92947537}
-{"file":"images\\Cheetah\\Cheetah_051.jpg","label":"cheetah","accuracy":0.8554587}
-{"file":"images\\Cheetah\\Cheetah_052.jpg","label":"cheetah","accuracy":0.92053187}
-{"file":"images\\Cheetah\\Cheetah_053.jpg","label":"leopard","accuracy":0.6226836}
-{"file":"images\\Cheetah\\Cheetah_054.jpg","label":"cheetah","accuracy":0.90023714}
-{"file":"images\\Cheetah\\Cheetah_055.jpg","label":"cheetah","accuracy":0.943304}
-{"file":"images\\Cheetah\\Cheetah_056.jpg","label":"cheetah","accuracy":0.89942116}
-{"file":"images\\Leopard\\Leopard_001.jpg","label":"leopard","accuracy":0.9102634}
-{"file":"images\\Leopard\\Leopard_002.jpg","label":"leopard","accuracy":0.8608845}
-{"file":"images\\Leopard\\Leopard_003.jpg","label":"leopard","accuracy":0.8743085}
-{"file":"images\\Leopard\\Leopard_004.jpg","label":"leopard","accuracy":0.75621384}
-{"file":"images\\Leopard\\Leopard_005.jpg","label":"leopard","accuracy":0.9034205}
-{"file":"images\\Leopard\\Leopard_006.jpg","label":"leopard","accuracy":0.95421}
-{"file":"images\\Leopard\\Leopard_007.jpg","label":"leopard","accuracy":0.898791}
-{"file":"images\\Leopard\\Leopard_008.jpg","label":"leopard","accuracy":0.9520947}
-{"file":"images\\Leopard\\Leopard_009.jpg","label":"leopard","accuracy":0.9163403}
-{"file":"images\\Leopard\\Leopard_010.jpg","label":"leopard","accuracy":0.8876691}
-{"file":"images\\Leopard\\Leopard_011.jpg","label":"leopard","accuracy":0.69192886}
-{"file":"images\\Leopard\\Leopard_012.jpg","label":"jaguar","accuracy":0.73405725}
-{"file":"images\\Leopard\\Leopard_013.jpg","label":"leopard","accuracy":0.49900392}
-{"file":"images\\Leopard\\Leopard_014.jpg","label":"leopard","accuracy":0.784033}
-{"file":"images\\Leopard\\Leopard_015.jpg","label":"leopard","accuracy":0.86790687}
-{"file":"images\\Leopard\\Leopard_016.jpg","label":"leopard","accuracy":0.7558235}
-{"file":"images\\Leopard\\Leopard_017.jpg","label":"jaguar","accuracy":0.71651983}
-{"file":"images\\Leopard\\Leopard_018.jpg","label":"leopard","accuracy":0.7952946}
-{"file":"images\\Leopard\\Leopard_019.jpg","label":"leopard","accuracy":0.9369959}
-{"file":"images\\Leopard\\Leopard_020.jpg","label":"leopard","accuracy":0.79832435}
-{"file":"images\\Leopard\\Leopard_021.jpg","label":"leopard","accuracy":0.7364911}
-{"file":"images\\Leopard\\Leopard_022.jpg","label":"leopard","accuracy":0.6640544}
-{"file":"images\\Leopard\\Leopard_023.jpg","label":"leopard","accuracy":0.8856878}
-{"file":"images\\Leopard\\Leopard_024.jpg","label":"jaguar","accuracy":0.9024149}
-{"file":"images\\Leopard\\Leopard_025.jpg","label":"leopard","accuracy":0.6742535}
-{"file":"images\\Leopard\\Leopard_026.jpg","label":"leopard","accuracy":0.9234387}
-{"file":"images\\Leopard\\Leopard_027.jpg","label":"leopard","accuracy":0.92080206}
-{"file":"images\\Leopard\\Leopard_028.jpg","label":"leopard","accuracy":0.8537905}
-{"file":"images\\Leopard\\Leopard_029.jpg","label":"leopard","accuracy":0.9316302}
-{"file":"images\\Leopard\\Leopard_030.jpg","label":"leopard","accuracy":0.81249255}
-{"file":"images\\Leopard\\Leopard_031.jpg","label":"leopard","accuracy":0.9238855}
-{"file":"images\\Leopard\\Leopard_032.jpg","label":"leopard","accuracy":0.8303719}
-{"file":"images\\Leopard\\Leopard_033.jpg","label":"leopard","accuracy":0.8114878}
-{"file":"images\\Leopard\\Leopard_034.jpg","label":"leopard","accuracy":0.9192435}
-{"file":"images\\Leopard\\Leopard_035.jpg","label":"cheetah","accuracy":0.4418037}
-{"file":"images\\Leopard\\Leopard_036.jpg","label":"leopard","accuracy":0.924419}
-{"file":"images\\Leopard\\Leopard_037.jpg","label":"leopard","accuracy":0.74227655}
-{"file":"images\\Leopard\\Leopard_038.jpg","label":"leopard","accuracy":0.42274573}
-{"file":"images\\Leopard\\Leopard_039.jpg","label":"leopard","accuracy":0.59748334}
-{"file":"images\\Leopard\\Leopard_040.jpg","label":"leopard","accuracy":0.7939812}
-{"file":"images\\Leopard\\Leopard_041.jpg","label":"jaguar","accuracy":0.6463417}
-{"file":"images\\Leopard\\Leopard_042.jpg","label":"leopard","accuracy":0.93778574}
-{"file":"images\\Leopard\\Leopard_043.jpg","label":"leopard","accuracy":0.71052635}
-{"file":"images\\Leopard\\Leopard_044.jpg","label":"leopard","accuracy":0.893637}
-{"file":"images\\Leopard\\Leopard_045.jpg","label":"leopard","accuracy":0.81649697}
-{"file":"images\\Leopard\\Leopard_046.jpg","label":"leopard","accuracy":0.9344351}
-{"file":"images\\Leopard\\Leopard_047.jpg","label":"jaguar","accuracy":0.8716566}
-{"file":"images\\Leopard\\Leopard_048.jpg","label":"leopard","accuracy":0.682589}
-{"file":"images\\Leopard\\Leopard_049.jpg","label":"cheetah","accuracy":0.2941128}
-{"file":"images\\Leopard\\Leopard_050.jpg","label":"leopard","accuracy":0.9132728}
-{"file":"images\\Lion\\Lion_001.jpg","label":"lion","accuracy":0.941918}
-{"file":"images\\Lion\\Lion_002.jpg","label":"lion","accuracy":0.94304514}
-{"file":"images\\Lion\\Lion_003.jpg","label":"lion","accuracy":0.8727246}
-{"file":"images\\Lion\\Lion_004.jpg","label":"lion","accuracy":0.9604066}
-{"file":"images\\Lion\\Lion_005.jpg","label":"lion","accuracy":0.98740536}
-{"file":"images\\Lion\\Lion_006.jpg","label":"lion","accuracy":0.8345898}
-{"file":"images\\Lion\\Lion_007.jpg","label":"lion","accuracy":0.7986786}
-{"file":"images\\Lion\\Lion_008.jpg","label":"lion","accuracy":0.80491394}
-{"file":"images\\Lion\\Lion_009.jpg","label":"lion","accuracy":0.90940595}
-{"file":"images\\Lion\\Lion_010.jpg","label":"lion","accuracy":0.8691581}
-{"file":"images\\Lion\\Lion_011.jpg","label":"lion","accuracy":0.9456491}
-{"file":"images\\Lion\\Lion_012.jpg","label":"warthog","accuracy":0.42081705}
-{"file":"images\\Lion\\Lion_013.jpg","label":"lion","accuracy":0.9425791}
-{"file":"images\\Lion\\Lion_014.jpg","label":"lion","accuracy":0.8200698}
-{"file":"images\\Lion\\Lion_015.jpg","label":"lion","accuracy":0.9389074}
-{"file":"images\\Lion\\Lion_016.jpg","label":"lion","accuracy":0.96965194}
-{"file":"images\\Lion\\Lion_017.jpg","label":"lion","accuracy":0.90127546}
-{"file":"images\\Lion\\Lion_018.jpg","label":"lion","accuracy":0.94701725}
-{"file":"images\\Lion\\Lion_019.jpg","label":"lion","accuracy":0.6569206}
-{"file":"images\\Lion\\Lion_020.jpg","label":"lion","accuracy":0.9326217}
-{"file":"images\\Lion\\Lion_021.jpg","label":"lion","accuracy":0.971134}
-{"file":"images\\Lion\\Lion_022.jpg","label":"lion","accuracy":0.9887656}
-{"file":"images\\Lion\\Lion_023.jpg","label":"lion","accuracy":0.60777926}
-{"file":"images\\Lion\\Lion_024.jpg","label":"lion","accuracy":0.9258643}
-{"file":"images\\Lion\\Lion_025.jpg","label":"lion","accuracy":0.93421346}
-{"file":"images\\Lion\\Lion_026.jpg","label":"lion","accuracy":0.9519769}
-{"file":"images\\Lion\\Lion_027.jpg","label":"lion","accuracy":0.9032762}
-{"file":"images\\Lion\\Lion_028.jpg","label":"lion","accuracy":0.8780275}
-{"file":"images\\Lion\\Lion_029.jpg","label":"lion","accuracy":0.98092604}
-{"file":"images\\Lion\\Lion_030.jpg","label":"lion","accuracy":0.9426253}
-{"file":"images\\Lion\\Lion_031.jpg","label":"lion","accuracy":0.9898773}
-{"file":"images\\Lion\\Lion_032.jpg","label":"lion","accuracy":0.928221}
-{"file":"images\\Lion\\Lion_033.jpg","label":"lion","accuracy":0.9589613}
-{"file":"images\\Lion\\Lion_034.jpg","label":"lion","accuracy":0.40890214}
-{"file":"images\\Lion\\Lion_035.jpg","label":"lion","accuracy":0.9703451}
-{"file":"images\\Lion\\Lion_036.jpg","label":"lion","accuracy":0.93945396}
-{"file":"images\\Lion\\Lion_037.jpg","label":"lion","accuracy":0.96801275}
-{"file":"images\\Lion\\Lion_038.jpg","label":"lion","accuracy":0.8406157}
-{"file":"images\\Lion\\Lion_039.jpg","label":"lion","accuracy":0.96891665}
-{"file":"images\\Lion\\Lion_040.jpg","label":"lion","accuracy":0.9192162}
-{"file":"images\\Lion\\Lion_041.jpg","label":"lion","accuracy":0.506623}
-{"file":"images\\Lion\\Lion_043.jpg","label":"lion","accuracy":0.9901984}
-{"file":"images\\Lion\\Lion_044.jpg","label":"lion","accuracy":0.9808429}
-{"file":"images\\Lion\\Lion_045.jpg","label":"lion","accuracy":0.9733391}
-{"file":"images\\Lion\\Lion_046.jpg","label":"lion","accuracy":0.90873903}
-{"file":"images\\Lion\\Lion_047.jpg","label":"lion","accuracy":0.95643103}
-{"file":"images\\Lion\\Lion_048.jpg","label":"lion","accuracy":0.9546938}
-{"file":"images\\Lion\\Lion_049.jpg","label":"lion","accuracy":0.5733609}
-{"file":"images\\Lion\\Lion_050.jpg","label":"ibex","accuracy":0.42378342}
-{"file":"images\\Puma\\Puma_001.jpg","label":"lynx","accuracy":0.5593369}
-{"file":"images\\Puma\\Puma_002.jpg","label":"cougar","accuracy":0.9626976}
-{"file":"images\\Puma\\Puma_003.jpg","label":"cougar","accuracy":0.9712909}
-{"file":"images\\Puma\\Puma_004.jpg","label":"cougar","accuracy":0.93717325}
-{"file":"images\\Puma\\Puma_005.jpg","label":"cougar","accuracy":0.8502598}
-{"file":"images\\Puma\\Puma_006.jpg","label":"cougar","accuracy":0.96322036}
-{"file":"images\\Puma\\Puma_007.jpg","label":"cougar","accuracy":0.9472923}
-{"file":"images\\Puma\\Puma_008.jpg","label":"cougar","accuracy":0.95156187}
-{"file":"images\\Puma\\Puma_009.jpg","label":"cougar","accuracy":0.9038759}
-{"file":"images\\Puma\\Puma_010.jpg","label":"cougar","accuracy":0.8724911}
-{"file":"images\\Puma\\Puma_011.jpg","label":"cougar","accuracy":0.95156187}
-{"file":"images\\Puma\\Puma_012.jpg","label":"cougar","accuracy":0.9767978}
-{"file":"images\\Puma\\Puma_013.jpg","label":"cougar","accuracy":0.93194216}
-{"file":"images\\Puma\\Puma_014.jpg","label":"cougar","accuracy":0.90743965}
-{"file":"images\\Puma\\Puma_015.jpg","label":"cougar","accuracy":0.8617327}
-{"file":"images\\Puma\\Puma_016.jpg","label":"cougar","accuracy":0.46084517}
-{"file":"images\\Puma\\Puma_017.jpg","label":"cougar","accuracy":0.9260263}
-{"file":"images\\Puma\\Puma_018.jpg","label":"cougar","accuracy":0.6200248}
-{"file":"images\\Puma\\Puma_019.jpg","label":"cougar","accuracy":0.94192606}
-{"file":"images\\Puma\\Puma_020.jpg","label":"cougar","accuracy":0.9669466}
-{"file":"images\\Puma\\Puma_021.jpg","label":"cougar","accuracy":0.5021585}
-{"file":"images\\Puma\\Puma_022.jpg","label":"cougar","accuracy":0.9588274}
-{"file":"images\\Puma\\Puma_023.jpg","label":"cougar","accuracy":0.8974725}
-{"file":"images\\Puma\\Puma_024.jpg","label":"cougar","accuracy":0.5431486}
-{"file":"images\\Puma\\Puma_025.jpg","label":"cougar","accuracy":0.93752706}
-{"file":"images\\Puma\\Puma_026.jpg","label":"cougar","accuracy":0.92336965}
-{"file":"images\\Puma\\Puma_027.jpg","label":"cougar","accuracy":0.9645322}
-{"file":"images\\Puma\\Puma_028.jpg","label":"cougar","accuracy":0.77776575}
-{"file":"images\\Puma\\Puma_029.jpg","label":"cougar","accuracy":0.95334417}
-{"file":"images\\Puma\\Puma_030.jpg","label":"cougar","accuracy":0.9727078}
-{"file":"images\\Puma\\Puma_031.jpg","label":"cougar","accuracy":0.9765638}
-{"file":"images\\Puma\\Puma_032.jpg","label":"cougar","accuracy":0.95752245}
-{"file":"images\\Puma\\Puma_033.jpg","label":"cougar","accuracy":0.95509034}
-{"file":"images\\Puma\\Puma_034.jpg","label":"cougar","accuracy":0.4100776}
-{"file":"images\\Puma\\Puma_035.jpg","label":"cougar","accuracy":0.959273}
-{"file":"images\\Puma\\Puma_036.jpg","label":"cougar","accuracy":0.8941327}
-{"file":"images\\Puma\\Puma_037.jpg","label":"cougar","accuracy":0.9108884}
-{"file":"images\\Puma\\Puma_038.jpg","label":"cougar","accuracy":0.90072525}
-{"file":"images\\Puma\\Puma_039.jpg","label":"cougar","accuracy":0.96741575}
-{"file":"images\\Puma\\Puma_040.jpg","label":"cougar","accuracy":0.53868383}
-{"file":"images\\Tiger\\Tiger_001.jpg","label":"tiger","accuracy":0.863352}
-{"file":"images\\Tiger\\Tiger_002.jpg","label":"tiger","accuracy":0.7402839}
-{"file":"images\\Tiger\\Tiger_003.jpg","label":"tiger","accuracy":0.79671144}
-{"file":"images\\Tiger\\Tiger_004.jpg","label":"tiger","accuracy":0.76422966}
-{"file":"images\\Tiger\\Tiger_005.jpg","label":"tiger","accuracy":0.81622285}
-{"file":"images\\Tiger\\Tiger_006.jpg","label":"tiger","accuracy":0.89257586}
-{"file":"images\\Tiger\\Tiger_007.jpg","label":"tiger","accuracy":0.87291133}
-{"file":"images\\Tiger\\Tiger_008.jpg","label":"tiger","accuracy":0.8596405}
-{"file":"images\\Tiger\\Tiger_009.jpg","label":"tiger","accuracy":0.8205658}
-{"file":"images\\Tiger\\Tiger_010.jpg","label":"tiger","accuracy":0.8187321}
-{"file":"images\\Tiger\\Tiger_011.jpg","label":"tiger","accuracy":0.8768037}
-{"file":"images\\Tiger\\Tiger_012.jpg","label":"tiger","accuracy":0.78112483}
-{"file":"images\\Tiger\\Tiger_013.jpg","label":"tiger","accuracy":0.8827546}
-{"file":"images\\Tiger\\Tiger_014.jpg","label":"tiger","accuracy":0.8493649}
-{"file":"images\\Tiger\\Tiger_015.jpg","label":"hyena","accuracy":0.6230441}
-{"file":"images\\Tiger\\Tiger_016.jpg","label":"tiger","accuracy":0.8221435}
-{"file":"images\\Tiger\\Tiger_017.jpg","label":"tiger","accuracy":0.7686503}
-{"file":"images\\Tiger\\Tiger_018.jpg","label":"tiger","accuracy":0.73965424}
-{"file":"images\\Tiger\\Tiger_019.jpg","label":"tiger","accuracy":0.74632776}
-{"file":"images\\Tiger\\Tiger_020.jpg","label":"tiger","accuracy":0.81164837}
-{"file":"images\\Tiger\\Tiger_021.jpg","label":"tiger","accuracy":0.79940367}
-{"file":"images\\Tiger\\Tiger_022.jpg","label":"tiger","accuracy":0.8054334}
-{"file":"images\\Tiger\\Tiger_023.jpg","label":"tiger","accuracy":0.8028748}
-{"file":"images\\Tiger\\Tiger_024.jpg","label":"tiger","accuracy":0.73889947}
-{"file":"images\\Tiger\\Tiger_025.jpg","label":"tiger","accuracy":0.8843294}
-{"file":"images\\Tiger\\Tiger_026.jpg","label":"tiger","accuracy":0.78103226}
-{"file":"images\\Tiger\\Tiger_027.jpg","label":"tiger","accuracy":0.82995224}
-{"file":"images\\Tiger\\Tiger_028.jpg","label":"tiger","accuracy":0.92373985}
-{"file":"images\\Tiger\\Tiger_029.jpg","label":"tiger","accuracy":0.75977105}
-{"file":"images\\Tiger\\Tiger_030.jpg","label":"tiger","accuracy":0.60995}
-{"file":"images\\Tiger\\Tiger_031.jpg","label":"tiger","accuracy":0.90471303}
-{"file":"images\\Tiger\\Tiger_032.jpg","label":"tiger","accuracy":0.7739581}
-{"file":"images\\Tiger\\Tiger_033.jpg","label":"tiger","accuracy":0.6698381}
-{"file":"images\\Tiger\\Tiger_034.jpg","label":"tiger","accuracy":0.8411337}
-{"file":"images\\Tiger\\Tiger_035.jpg","label":"tiger","accuracy":0.91910297}
-{"file":"images\\Tiger\\Tiger_036.jpg","label":"tiger","accuracy":0.6881566}
-{"file":"images\\Tiger\\Tiger_037.jpg","label":"tiger","accuracy":0.7513024}
-{"file":"images\\Tiger\\Tiger_038.jpg","label":"tiger","accuracy":0.8348889}
-{"file":"images\\Tiger\\Tiger_039.jpg","label":"tiger","accuracy":0.8651296}
-{"file":"images\\Tiger\\Tiger_040.jpg","label":"tiger","accuracy":0.7398779}
-{"file":"images\\Tiger\\Tiger_041.jpg","label":"tiger","accuracy":0.8962505}
-{"file":"images\\Tiger\\Tiger_042.jpg","label":"tiger","accuracy":0.8448518}
-{"file":"images\\Tiger\\Tiger_043.jpg","label":"tiger","accuracy":0.62117803}
-{"file":"images\\Tiger\\Tiger_044.jpg","label":"tiger","accuracy":0.8167117}
-{"file":"images\\Tiger\\Tiger_045.jpg","label":"tiger","accuracy":0.5312678}
-{"file":"images\\Tiger\\Tiger_046.jpg","label":"tiger","accuracy":0.76741576}
-{"file":"images\\Tiger\\Tiger_047.jpg","label":"tiger","accuracy":0.7330092}
-{"file":"images\\Tiger\\Tiger_048.jpg","label":"tiger","accuracy":0.72271395}
+{"file":"images/dog_315.jpg","label":"American Staffordshire terrier","accuracy":0.047185164}
+{"file":"images/cat_350.jpg","label":"Persian cat","accuracy":0.06597943}
+{"file":"images/dog_204.jpg","label":"Walker hound","accuracy":0.040171515}
+{"file":"images/dog_238.jpg","label":"toy terrier","accuracy":0.049549405}
+{"file":"images/cat_88.jpg","label":"tabby","accuracy":0.05582075}
+{"file":"images/dog_552.jpg","label":"French bulldog","accuracy":0.10940819}
+{"file":"images/dog_162.jpg","label":"Eskimo dog","accuracy":0.025915729}
+{"file":"images/dog_30.jpg","label":"American Staffordshire terrier","accuracy":0.012588155}
+{"file":"images/cat_585.jpg","label":"Egyptian cat","accuracy":0.0268671}
+{"file":"images/cat_403.jpg","label":"Siamese cat","accuracy":0.048951883}
+{"file":"images/dog_195.jpg","label":"Weimaraner","accuracy":0.06811127}
+{"file":"images/dog_322.jpg","label":"French bulldog","accuracy":0.03047557}
+{"file":"images/dog_217.jpg","label":"whistle","accuracy":0.12314066}
+{"file":"images/cat_372.jpg","label":"tiger cat","accuracy":0.09576443}
+{"file":"images/cat_351.jpg","label":"tiger cat","accuracy":0.08754478}
+{"file":"images/cat_397.jpg","label":"leopard","accuracy":0.011893439}
+{"file":"images/dog_253.jpg","label":"Pembroke","accuracy":0.044912722}
+{"file":"images/dog_99.jpg","label":"Labrador retriever","accuracy":0.025214467}
+{"file":"images/cat_100.jpg","label":"Egyptian cat","accuracy":0.02552339}
+{"file":"images/dog_177.jpg","label":"Pembroke","accuracy":0.024694946}
+{"file":"images/cat_70.jpg","label":"tiger cat","accuracy":0.055416174}
+{"file":"images/cat_118.jpg","label":"Bernese mountain dog","accuracy":0.020485297}
+{"file":"images/dog_120.jpg","label":"Shetland sheepdog","accuracy":0.024821363}
+{"file":"images/dog_13.jpg","label":"collie","accuracy":0.118985616}
+{"file":"images/cat_510.jpg","label":"jigsaw puzzle","accuracy":0.03738549}
+{"file":"images/cat_453.jpg","label":"toilet seat","accuracy":0.21283567}
+{"file":"images/dog_154.jpg","label":"Labrador retriever","accuracy":0.097676486}
+{"file":"images/cat_78.jpg","label":"Siamese cat","accuracy":0.32623535}
+{"file":"images/cat_604.jpg","label":"koala","accuracy":0.020920636}
+{"file":"images/cat_474.jpg","label":"Egyptian cat","accuracy":0.0115205925}
+{"file":"images/dog_550.jpg","label":"Labrador retriever","accuracy":0.023405815}
+{"file":"images/dog_294.jpg","label":"Labrador retriever","accuracy":0.05786196}
+{"file":"images/dog_549.jpg","label":"Border collie","accuracy":0.07322077}
+{"file":"images/cat_153.jpg","label":"tabby","accuracy":0.10385528}
+{"file":"images/cat_369.jpg","label":"tabby","accuracy":0.06674042}
+{"file":"images/cat_358.jpg","label":"bath towel","accuracy":0.27111086}
+{"file":"images/cat_27.jpg","label":"tiger cat","accuracy":0.04429511}
+{"file":"images/cat_77.jpg","label":"tabby","accuracy":0.04475149}
+{"file":"images/cat_297.jpg","label":"tiger cat","accuracy":0.10491916}
+{"file":"images/cat_485.jpg","label":"Siamese cat","accuracy":0.1608847}
+{"file":"images/dog_472.jpg","label":"cocker spaniel","accuracy":0.025914414}
+{"file":"images/dog_291.jpg","label":"standard poodle","accuracy":0.08433089}
+{"file":"images/cat_359.jpg","label":"Egyptian cat","accuracy":0.06515685}
+{"file":"images/dog_262.jpg","label":"Pembroke","accuracy":0.085485935}
+{"file":"images/dog_152.jpg","label":"timber wolf","accuracy":0.118435055}
+{"file":"images/dog_514.jpg","label":"Chihuahua","accuracy":0.04844837}
+{"file":"images/dog_414.jpg","label":"Labrador retriever","accuracy":0.01976992}
+{"file":"images/dog_33.jpg","label":"Tibetan terrier","accuracy":0.037582573}
+{"file":"images/cat_525.jpg","label":"tiger cat","accuracy":0.021259781}
+{"file":"images/dog_123.jpg","label":"pug","accuracy":0.048686795}
+{"file":"images/dog_485.jpg","label":"Bernese mountain dog","accuracy":0.060861345}
+{"file":"images/cat_531.jpg","label":"tabby","accuracy":0.106230445}
+{"file":"images/cat_26.jpg","label":"lynx","accuracy":0.028283533}
+{"file":"images/dog_354.jpg","label":"English foxhound","accuracy":0.043405578}
+{"file":"images/cat_37.jpg","label":"Egyptian cat","accuracy":0.03747236}
+{"file":"images/cat_162.jpg","label":"Siamese cat","accuracy":0.08242742}
+{"file":"images/dog_39.jpg","label":"Border collie","accuracy":0.11920509}
+{"file":"images/cat_61.jpg","label":"tiger cat","accuracy":0.06140989}
+{"file":"images/dog_129.jpg","label":"American Staffordshire terrier","accuracy":0.036485717}
+{"file":"images/dog_518.jpg","label":"schipperke","accuracy":0.008656206}
+{"file":"images/cat_306.jpg","label":"white wolf","accuracy":0.024605492}
+{"file":"images/dog_363.jpg","label":"Staffordshire bullterrier","accuracy":0.01721052}
+{"file":"images/cat_367.jpg","label":"tabby","accuracy":0.01200543}
+{"file":"images/dog_197.jpg","label":"Newfoundland","accuracy":0.15075897}
+{"file":"images/dog_32.jpg","label":"basenji","accuracy":0.023452848}
+{"file":"images/dog_178.jpg","label":"web site","accuracy":0.013846369}
+{"file":"images/dog_136.jpg","label":"vizsla","accuracy":0.13228436}
+{"file":"images/dog_287.jpg","label":"pug","accuracy":0.15193799}
+{"file":"images/cat_399.jpg","label":"tiger cat","accuracy":0.14821348}
+{"file":"images/dog_338.jpg","label":"Labrador retriever","accuracy":0.13560219}
+{"file":"images/dog_571.jpg","label":"cocker spaniel","accuracy":0.01968936}
+{"file":"images/cat_423.jpg","label":"tiger cat","accuracy":0.09497336}
+{"file":"images/dog_90.jpg","label":"book jacket","accuracy":0.026346345}
+{"file":"images/cat_523.jpg","label":"tabby","accuracy":0.053620603}
+{"file":"images/cat_311.jpg","label":"Siamese cat","accuracy":0.054090843}
+{"file":"images/cat_285.jpg","label":"Egyptian cat","accuracy":0.38762328}
+{"file":"images/cat_586.jpg","label":"Persian cat","accuracy":0.07402098}
+{"file":"images/cat_53.jpg","label":"Egyptian cat","accuracy":0.05181928}
+{"file":"images/dog_214.jpg","label":"Pomeranian","accuracy":0.024359232}
+{"file":"images/cat_209.jpg","label":"indri","accuracy":0.018202074}
+{"file":"images/dog_487.jpg","label":"Maltese dog","accuracy":0.06194897}
+{"file":"images/dog_509.jpg","label":"Appenzeller","accuracy":0.018564256}
+{"file":"images/dog_216.jpg","label":"malinois","accuracy":0.072624765}
+{"file":"images/cat_565.jpg","label":"Persian cat","accuracy":0.016088702}
+{"file":"images/cat_426.jpg","label":"Egyptian cat","accuracy":0.041615}
+{"file":"images/cat_344.jpg","label":"lynx","accuracy":0.01894127}
+{"file":"images/dog_0.jpg","label":"Border collie","accuracy":0.054346155}
+{"file":"images/cat_194.jpg","label":"Egyptian cat","accuracy":0.12746346}
+{"file":"images/cat_408.jpg","label":"tabby","accuracy":0.024853446}
+{"file":"images/dog_97.jpg","label":"English foxhound","accuracy":0.021920428}
+{"file":"images/cat_465.jpg","label":"Egyptian cat","accuracy":0.11484642}
+{"file":"images/dog_365.jpg","label":"Labrador retriever","accuracy":0.12814973}
+{"file":"images/dog_444.jpg","label":"Rottweiler","accuracy":0.05982532}
+{"file":"images/dog_579.jpg","label":"Pembroke","accuracy":0.070227884}
+{"file":"images/dog_144.jpg","label":"pug","accuracy":0.09248383}
+{"file":"images/cat_391.jpg","label":"tiger cat","accuracy":0.111782156}
+{"file":"images/cat_553.jpg","label":"Egyptian cat","accuracy":0.030426908}
+{"file":"images/dog_74.jpg","label":"Border collie","accuracy":0.049317542}
+{"file":"images/dog_47.jpg","label":"kelpie","accuracy":0.09020615}
+{"file":"images/cat_12.jpg","label":"dhole","accuracy":0.09959388}
+{"file":"images/cat_229.jpg","label":"Siamese cat","accuracy":0.017154492}
+{"file":"images/cat_307.jpg","label":"tiger cat","accuracy":0.018853646}
+{"file":"images/cat_362.jpg","label":"picket fence","accuracy":0.04597239}
+{"file":"images/dog_164.jpg","label":"toy terrier","accuracy":0.011268486}
+{"file":"images/cat_244.jpg","label":"tobacco shop","accuracy":0.04619421}
+{"file":"images/cat_548.jpg","label":"web site","accuracy":0.14163613}
+{"file":"images/dog_219.jpg","label":"bloodhound","accuracy":0.014182975}
+{"file":"images/cat_526.jpg","label":"Persian cat","accuracy":0.21836592}
+{"file":"images/cat_179.jpg","label":"tiger cat","accuracy":0.030978514}
+{"file":"images/cat_172.jpg","label":"paper towel","accuracy":0.026440935}
+{"file":"images/dog_534.jpg","label":"boxer","accuracy":0.06645757}
+{"file":"images/cat_384.jpg","label":"tiger cat","accuracy":0.05619607}
+{"file":"images/cat_184.jpg","label":"tabby","accuracy":0.09247017}
+{"file":"images/dog_502.jpg","label":"Labrador retriever","accuracy":0.0311314}
+{"file":"images/cat_146.jpg","label":"Egyptian cat","accuracy":0.03752704}
+{"file":"images/dog_150.jpg","label":"Shih-Tzu","accuracy":0.031378016}
+{"file":"images/dog_277.jpg","label":"Tibetan mastiff","accuracy":0.09495673}
+{"file":"images/dog_196.jpg","label":"collie","accuracy":0.043694943}
+{"file":"images/dog_551.jpg","label":"German shepherd","accuracy":0.017305339}
+{"file":"images/dog_122.jpg","label":"Italian greyhound","accuracy":0.03929088}
+{"file":"images/dog_116.jpg","label":"Rhodesian ridgeback","accuracy":0.029733162}
+{"file":"images/cat_279.jpg","label":"tabby","accuracy":0.039277725}
+{"file":"images/dog_209.jpg","label":"Irish setter","accuracy":0.06063653}
+{"file":"images/dog_4.jpg","label":"German shepherd","accuracy":0.07629941}
+{"file":"images/dog_331.jpg","label":"sandbar","accuracy":0.03241904}
+{"file":"images/dog_199.jpg","label":"Great Pyrenees","accuracy":0.026129397}
+{"file":"images/cat_505.jpg","label":"Egyptian cat","accuracy":0.038570266}
+{"file":"images/dog_67.jpg","label":"miniature poodle","accuracy":0.026666911}
+{"file":"images/cat_102.jpg","label":"Persian cat","accuracy":0.021440076}
+{"file":"images/dog_475.jpg","label":"Samoyed","accuracy":0.06970472}
+{"file":"images/dog_443.jpg","label":"vizsla","accuracy":0.015306651}
+{"file":"images/dog_401.jpg","label":"beagle","accuracy":0.054031175}
+{"file":"images/cat_430.jpg","label":"lynx","accuracy":0.0146743925}
+{"file":"images/dog_232.jpg","label":"Afghan hound","accuracy":0.13482338}
+{"file":"images/dog_301.jpg","label":"pug","accuracy":0.15341125}
+{"file":"images/dog_70.jpg","label":"kelpie","accuracy":0.04047949}
+{"file":"images/dog_376.jpg","label":"papillon","accuracy":0.10960266}
+{"file":"images/dog_171.jpg","label":"Staffordshire bullterrier","accuracy":0.039492536}
+{"file":"images/cat_93.jpg","label":"Egyptian cat","accuracy":0.03019183}
+{"file":"images/dog_51.jpg","label":"golden retriever","accuracy":0.106747195}
+{"file":"images/cat_15.jpg","label":"Siamese cat","accuracy":0.027658999}
+{"file":"images/dog_259.jpg","label":"web site","accuracy":0.018376965}
+{"file":"images/cat_581.jpg","label":"tabby","accuracy":0.13268992}
+{"file":"images/dog_490.jpg","label":"golden retriever","accuracy":0.10803967}
+{"file":"images/dog_302.jpg","label":"Pomeranian","accuracy":0.030135432}
+{"file":"images/cat_235.jpg","label":"Egyptian cat","accuracy":0.064099155}
+{"file":"images/cat_158.jpg","label":"tiger cat","accuracy":0.08978976}
+{"file":"images/dog_125.jpg","label":"pug","accuracy":0.056297313}
+{"file":"images/dog_367.jpg","label":"American Staffordshire terrier","accuracy":0.023519956}
+{"file":"images/dog_415.jpg","label":"kelpie","accuracy":0.05958203}
+{"file":"images/cat_227.jpg","label":"Egyptian cat","accuracy":0.0713987}
+{"file":"images/cat_355.jpg","label":"conch","accuracy":0.031218806}
+{"file":"images/cat_331.jpg","label":"Egyptian cat","accuracy":0.06268935}
+{"file":"images/dog_559.jpg","label":"American Staffordshire terrier","accuracy":0.02046396}
+{"file":"images/cat_221.jpg","label":"tabby","accuracy":0.094780214}
+{"file":"images/cat_16.jpg","label":"Egyptian cat","accuracy":0.015849067}
+{"file":"images/dog_62.jpg","label":"bull mastiff","accuracy":0.015997393}
+{"file":"images/cat_590.jpg","label":"tiger cat","accuracy":0.05260345}
+{"file":"images/dog_231.jpg","label":"Appenzeller","accuracy":0.026713751}
+{"file":"images/cat_419.jpg","label":"Siamese cat","accuracy":0.035900947}
+{"file":"images/cat_80.jpg","label":"Egyptian cat","accuracy":0.054737896}
+{"file":"images/dog_200.jpg","label":"Labrador retriever","accuracy":0.05296444}
+{"file":"images/cat_214.jpg","label":"tiger cat","accuracy":0.034098484}
+{"file":"images/dog_512.jpg","label":"Shih-Tzu","accuracy":0.048715338}
+{"file":"images/cat_464.jpg","label":"brassiere","accuracy":0.015655305}
+{"file":"images/dog_371.jpg","label":"American Staffordshire terrier","accuracy":0.042896744}
+{"file":"images/dog_168.jpg","label":"Rhodesian ridgeback","accuracy":0.021184128}
+{"file":"images/cat_336.jpg","label":"tabby","accuracy":0.1344959}
+{"file":"images/cat_202.jpg","label":"tiger cat","accuracy":0.040079206}
+{"file":"images/dog_124.jpg","label":"black-and-tan coonhound","accuracy":0.1328262}
+{"file":"images/cat_483.jpg","label":"Egyptian cat","accuracy":0.025504617}
+{"file":"images/cat_407.jpg","label":"tabby","accuracy":0.030701961}
+{"file":"images/cat_60.jpg","label":"tabby","accuracy":0.074361645}
+{"file":"images/dog_175.jpg","label":"basset","accuracy":0.087876044}
+{"file":"images/dog_492.jpg","label":"kelpie","accuracy":0.014327674}
+{"file":"images/dog_540.jpg","label":"Brittany spaniel","accuracy":0.036766402}
+{"file":"images/cat_21.jpg","label":"tabby","accuracy":0.09191976}
+{"file":"images/cat_570.jpg","label":"Egyptian cat","accuracy":0.0882852}
+{"file":"images/dog_421.jpg","label":"bull mastiff","accuracy":0.020847546}
+{"file":"images/cat_124.jpg","label":"Egyptian cat","accuracy":0.038400594}
+{"file":"images/cat_589.jpg","label":"envelope","accuracy":0.057010245}
+{"file":"images/dog_241.jpg","label":"Chihuahua","accuracy":0.030271418}
+{"file":"images/dog_520.jpg","label":"Staffordshire bullterrier","accuracy":0.041179467}
+{"file":"images/cat_487.jpg","label":"tabby","accuracy":0.032333683}
+{"file":"images/cat_139.jpg","label":"Egyptian cat","accuracy":0.070775375}
+{"file":"images/dog_234.jpg","label":"golden retriever","accuracy":0.042444687}
+{"file":"images/dog_151.jpg","label":"timber wolf","accuracy":0.03725448}
+{"file":"images/dog_564.jpg","label":"chow","accuracy":0.037991792}
+{"file":"images/cat_551.jpg","label":"tiger cat","accuracy":0.035966385}
+{"file":"images/cat_183.jpg","label":"lynx","accuracy":0.013178913}
+{"file":"images/dog_546.jpg","label":"Norfolk terrier","accuracy":0.011795423}
+{"file":"images/dog_270.jpg","label":"dingo","accuracy":0.018841377}
+{"file":"images/dog_377.jpg","label":"kelpie","accuracy":0.045992963}
+{"file":"images/dog_482.jpg","label":"bloodhound","accuracy":0.059333943}
+{"file":"images/cat_538.jpg","label":"tabby","accuracy":0.031008478}
+{"file":"images/cat_211.jpg","label":"Egyptian cat","accuracy":0.057562817}
+{"file":"images/cat_592.jpg","label":"tiger cat","accuracy":0.371329}
+{"file":"images/dog_412.jpg","label":"Gordon setter","accuracy":0.04531302}
+{"file":"images/dog_85.jpg","label":"Irish setter","accuracy":0.011884999}
+{"file":"images/cat_69.jpg","label":"tabby","accuracy":0.049603194}
+{"file":"images/cat_321.jpg","label":"Egyptian cat","accuracy":0.04239704}
+{"file":"images/cat_207.jpg","label":"tabby","accuracy":0.068914205}
+{"file":"images/dog_347.jpg","label":"Chihuahua","accuracy":0.031166775}
+{"file":"images/dog_8.jpg","label":"German shepherd","accuracy":0.0084485505}
+{"file":"images/dog_82.jpg","label":"toy poodle","accuracy":0.015356371}
+{"file":"images/cat_489.jpg","label":"tabby","accuracy":0.069066636}
+{"file":"images/cat_318.jpg","label":"tabby","accuracy":0.22740825}
+{"file":"images/cat_2.jpg","label":"Persian cat","accuracy":0.22865082}
+{"file":"images/dog_140.jpg","label":"African hunting dog","accuracy":0.05357687}
+{"file":"images/cat_268.jpg","label":"tiger cat","accuracy":0.29053566}
+{"file":"images/cat_533.jpg","label":"Labrador retriever","accuracy":0.028323902}
+{"file":"images/dog_468.jpg","label":"German short-haired pointer","accuracy":0.00907444}
+{"file":"images/dog_392.jpg","label":"Cardigan","accuracy":0.015284611}
+{"file":"images/dog_159.jpg","label":"German shepherd","accuracy":0.033156857}
+{"file":"images/cat_396.jpg","label":"tiger cat","accuracy":0.051888485}
+{"file":"images/cat_269.jpg","label":"Egyptian cat","accuracy":0.072464846}
+{"file":"images/dog_266.jpg","label":"basenji","accuracy":0.113500506}
+{"file":"images/dog_583.jpg","label":"Labrador retriever","accuracy":0.114493065}
+{"file":"images/dog_23.jpg","label":"beagle","accuracy":0.0467951}
+{"file":"images/dog_229.jpg","label":"American Staffordshire terrier","accuracy":0.11329093}
+{"file":"images/dog_572.jpg","label":"Labrador retriever","accuracy":0.018762212}
+{"file":"images/cat_370.jpg","label":"Egyptian cat","accuracy":0.020033836}
+{"file":"images/cat_506.jpg","label":"bath towel","accuracy":0.086985394}
+{"file":"images/dog_478.jpg","label":"bucket","accuracy":0.02791249}
+{"file":"images/dog_138.jpg","label":"beagle","accuracy":0.027222784}
+{"file":"images/dog_558.jpg","label":"Maltese dog","accuracy":0.063349605}
+{"file":"images/cat_452.jpg","label":"Egyptian cat","accuracy":0.030640045}
+{"file":"images/dog_142.jpg","label":"English springer","accuracy":0.017651144}
+{"file":"images/cat_50.jpg","label":"tabby","accuracy":0.2145869}
+{"file":"images/dog_237.jpg","label":"German shepherd","accuracy":0.07576041}
+{"file":"images/dog_532.jpg","label":"Italian greyhound","accuracy":0.025051346}
+{"file":"images/cat_75.jpg","label":"tabby","accuracy":0.046326533}
+{"file":"images/cat_58.jpg","label":"tiger cat","accuracy":0.07621082}
+{"file":"images/dog_317.jpg","label":"American Staffordshire terrier","accuracy":0.05233201}
+{"file":"images/dog_293.jpg","label":"Irish terrier","accuracy":0.039766774}
+{"file":"images/dog_364.jpg","label":"cocker spaniel","accuracy":0.01825794}
+{"file":"images/cat_200.jpg","label":"Persian cat","accuracy":0.047428045}
+{"file":"images/cat_601.jpg","label":"Egyptian cat","accuracy":0.026952833}
+{"file":"images/dog_525.jpg","label":"otterhound","accuracy":0.01673773}
+{"file":"images/dog_15.jpg","label":"affenpinscher","accuracy":0.075574845}
+{"file":"images/cat_87.jpg","label":"Egyptian cat","accuracy":0.11992805}
+{"file":"images/cat_583.jpg","label":"tabby","accuracy":0.2335368}
+{"file":"images/cat_532.jpg","label":"Egyptian cat","accuracy":0.021298578}
+{"file":"images/cat_580.jpg","label":"Egyptian cat","accuracy":0.016460897}
+{"file":"images/cat_289.jpg","label":"Egyptian cat","accuracy":0.10973382}
+{"file":"images/cat_455.jpg","label":"tabby","accuracy":0.032733604}
+{"file":"images/dog_381.jpg","label":"airship","accuracy":0.0126942545}
+{"file":"images/dog_147.jpg","label":"redbone","accuracy":0.025907733}
+{"file":"images/dog_59.jpg","label":"Labrador retriever","accuracy":0.011617273}
+{"file":"images/dog_93.jpg","label":"Rottweiler","accuracy":0.056099333}
+{"file":"images/dog_471.jpg","label":"Border collie","accuracy":0.07797636}
+{"file":"images/dog_334.jpg","label":"malinois","accuracy":0.063682534}
+{"file":"images/dog_45.jpg","label":"miniature poodle","accuracy":0.10115312}
+{"file":"images/cat_275.jpg","label":"Egyptian cat","accuracy":0.048892714}
+{"file":"images/dog_224.jpg","label":"bikini","accuracy":0.0070323157}
+{"file":"images/cat_518.jpg","label":"Persian cat","accuracy":0.04614538}
+{"file":"images/cat_560.jpg","label":"Siamese cat","accuracy":0.060059167}
+{"file":"images/cat_511.jpg","label":"lynx","accuracy":0.050342508}
+{"file":"images/cat_429.jpg","label":"Egyptian cat","accuracy":0.035632677}
+{"file":"images/dog_31.jpg","label":"Shih-Tzu","accuracy":0.011214573}
+{"file":"images/dog_566.jpg","label":"beagle","accuracy":0.027698772}
+{"file":"images/dog_560.jpg","label":"Irish setter","accuracy":0.05506936}
+{"file":"images/cat_132.jpg","label":"sleeping bag","accuracy":0.05659588}
+{"file":"images/cat_66.jpg","label":"Boston bull","accuracy":0.017013842}
+{"file":"images/cat_238.jpg","label":"tabby","accuracy":0.06369658}
+{"file":"images/dog_323.jpg","label":"kuvasz","accuracy":0.018158609}
+{"file":"images/dog_220.jpg","label":"sarong","accuracy":0.008111859}
+{"file":"images/dog_50.jpg","label":"soft-coated wheaten terrier","accuracy":0.012942103}
+{"file":"images/dog_479.jpg","label":"English foxhound","accuracy":0.01884123}
+{"file":"images/dog_447.jpg","label":"German shepherd","accuracy":0.08848209}
+{"file":"images/cat_469.jpg","label":"Egyptian cat","accuracy":0.061443273}
+{"file":"images/dog_451.jpg","label":"Eskimo dog","accuracy":0.05511943}
+{"file":"images/dog_553.jpg","label":"Norfolk terrier","accuracy":0.031366408}
+{"file":"images/dog_109.jpg","label":"papillon","accuracy":0.01649506}
+{"file":"images/dog_351.jpg","label":"Labrador retriever","

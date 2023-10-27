@@ -1,31 +1,8 @@
-Round,Modo,Tempo de execução (s)
-1,sequencial,66.038
-2,sequencial,64.095
-3,sequencial,64.097
-4,sequencial,64.846
-5,sequencial,67.484
-1,7 Nodos,23.473
-2,7 Nodos,23.436
-3,7 Nodos,23.290
-4,7 Nodos,23.450
-5,7 Nodos,23.470
-1,6 Nodos,23.951
-2,6 Nodos,23.520
-3,6 Nodos,23.558
-4,6 Nodos,23.327
-5,6 Nodos,23.978
-1,5 Nodos,23.897
-2,5 Nodos,23.890
-3,5 Nodos,23.810
-4,5 Nodos,23.718
-5,5 Nodos,24.147
-1,4 Nodos,26.378
-2,4 Nodos,26.337
-3,4 Nodos,26.265
-4,4 Nodos,26.353
-5,4 Nodos,26.662
-1,3 Nodos,26.283
-2,3 Nodos,26.209
-3,3 Nodos,26.132
-4,3 Nodos,26.424
-5,3 Nodos,26.186
+Máquinas,Cores utilizados,Cores,Tempo de execução (s),Speed-Up,Speed-Up Ideal,Eficiência
+1,16,16,1234.693,1.00,1,0.06
+2,18,32,679.267,1.82,2,0.10
+3,18,48,501.033,2.46,3,0.14
+4,34,64,369.721,3.34,4,0.10
+5,50,80,237.633,5.20,5,0.10
+6,66,96,221.723,5.57,6,0.08
+7,82,112,184.935,6.68,7,0.08
