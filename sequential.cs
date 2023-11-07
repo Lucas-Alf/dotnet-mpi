@@ -53,5 +53,35 @@ namespace DotNetMPI
                 }
             }
         }
+
+        public static int[] GenerateRandomIntArray(int size)
+        {
+            var input = new int[size];
+            var randNum = new Random();
+            for (int i = 0; i < input.Length; i++)
+                input[i] = randNum.Next(0, size);
+
+            return input;
+        }
+
+
+        public static int[] BubbleSort(int[] arr)
+        {
+            var temp = 0;
+            for (var write = 0; write < arr.Length; write++)
+            {
+                for (var sort = 0; sort < arr.Length - 1; sort++)
+                {
+                    if (arr[sort] > arr[sort + 1])
+                    {
+                        temp = arr[sort + 1];
+                        arr[sort + 1] = arr[sort];
+                        arr[sort] = temp;
+                    }
+                }
+            }
+
+            return arr;
+        }
     }
 }
