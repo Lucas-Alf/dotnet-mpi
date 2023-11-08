@@ -219,36 +219,63 @@ namespace DotNetMPI
                     var array = Sequential.GenerateRandomIntArray(40);
                     var delta = array.Length / comm.Size;
                     var (leftSide, rightSide) = DivideArray(array);
+                    var depth = 0;
 
-                    comm.Send((leftSide, delta, comm.Rank), 1, 0);
-                    comm.Send((rightSide, delta, comm.Rank), 2, 0);
+                    comm.Send((leftSide, delta, comm.Rank, depth), 1, 0);
+                    comm.Send((rightSide, delta, comm.Rank, depth), 2, 0);
 
-                    var resultLeft = comm.Receive<int[]>(1, 0);
-                    var resultRight = comm.Receive<int[]>(2, 0);
-                    var output = resultLeft.Concat(resultRight);
+                    int[] resultLeft = new int[array.Length / 2];
+                    int[] resultRight = new int[array.Length / 2];
+
+                    comm.Receive(1, 0, ref resultLeft);
+                    comm.Receive(2, 0, ref resultRight);
+
+                    var concat = resultLeft.Concat(resultRight);
+
+                    var output = Sequential.BubbleSort(array);
+
                     Console.WriteLine(String.Join(", ", output));
                 }
                 else
                 {
-                    var (array, delta, dad) = comm.Receive<(int[], int, int)>(0, 0);
-                    if (array.Length <= delta)
+                    var (array, delta, dad, depth) = comm.Receive<(int[], int, int, int)>(Communicator.anySource, 0);
+                    if (array.Length <= delta || (comm.Rank + (4 + depth)) > comm.Size - 1)
                     {
                         var output = Sequential.BubbleSort(array);
                         comm.Send(output, dad, 0);
                     }
                     else
                     {
-                        var leftChild = 0;  // TO-DO
-                        var rightChild = 0; // TO-DO
+                        var leftChild = 0;
+                        var rightChild = 0;
+                        if (comm.Rank % 2 == 0) // Rank é par
+                        {
+                            leftChild = comm.Rank + (3 + depth);
+                            rightChild = comm.Rank + (4 + depth);
+                        }
+                        else
+                        {
+                            leftChild = comm.Rank + (2 + depth);
+                            rightChild = comm.Rank + (3 + depth);
+                        }
+
+                        //Console.WriteLine("Rank " + comm.Rank);
+                        //Console.WriteLine("Left " + leftChild);
+                        //Console.WriteLine("Right " + rightChild);
 
                         var (leftSide, rightSide) = DivideArray(array);
 
-                        comm.Send((leftSide, delta, comm.Rank), leftChild, 0);
-                        comm.Send((rightSide, delta, comm.Rank), rightChild, 0);
+                        comm.Send((leftSide, delta, comm.Rank, depth + 1), leftChild, 0);
+                        comm.Send((rightSide, delta, comm.Rank, depth + 1), rightChild, 0);
 
-                        var resultLeft = comm.Receive<int[]>(leftChild, 0);
-                        var resultRight = comm.Receive<int[]>(rightChild, 0);
-                        var output = resultLeft.Concat(resultRight);
+                        int[] resultLeft = new int[delta * 2]; // Needs to be better
+                        int[] resultRight = new int[delta * 2]; // Needs to be better
+
+                        comm.Receive(leftChild, 0, ref resultLeft);
+                        comm.Receive(rightChild, 0, ref resultRight);
+                        var concat = resultLeft.Concat(resultRight).ToArray();
+
+                        var output = Sequential.BubbleSort(concat);
 
                         comm.Send(output, dad, 0);
                     }
