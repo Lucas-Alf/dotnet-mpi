@@ -7,6 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.6.1" />
+  </ItemGroup>
+
   <ItemGroup Condition=" '$(OS)' == 'Windows_NT' ">
     <PackageReference Include="MPI.NET" Version="1.4.0" />
     <PackageReference Include="TorchSharp" Version="0.100.6" />
@@ -20,6 +24,5 @@
     <PackageReference Include="TorchSharp" Version="0.100.6" />
     <PackageReference Include="TorchVision" Version="0.100.6" />
     <PackageReference Include="libtorch-cpu-linux-x64" Version="2.0.1.1" />
-    <PackageReference Include="xunit" Version="2.6.1" />
   </ItemGroup>
 </Project>

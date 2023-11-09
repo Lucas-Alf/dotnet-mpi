@@ -9,6 +9,7 @@ using static TorchSharp.torchvision;
 using System.Text.Json;
 using TorchSharp;
 using TorchSharp.Modules;
+using MPI;
 
 namespace DotNetMPI
 {
@@ -204,9 +205,12 @@ namespace DotNetMPI
 
         private static (int[], int[]) DivideArray(int[] array)
         {
-            var sliceSize = array.Length / 2;
-            var leftSide = array.Take(sliceSize).ToArray();
-            var rightSide = array.Skip(sliceSize).Take(sliceSize).ToArray();
+            var sliceSize = array.Length / 2d;
+            var leftSize = Convert.ToInt32(Math.Floor(sliceSize));
+            var rightSize = Convert.ToInt32(Math.Ceiling(sliceSize));
+
+            var leftSide = array.Take(leftSize).ToArray();
+            var rightSide = array.Skip(leftSize).Take(rightSize).ToArray();
             return (leftSide, rightSide);
         }
 
@@ -216,67 +220,64 @@ namespace DotNetMPI
             {
                 if (comm.Rank == 0)
                 {
-                    var array = Sequential.GenerateRandomIntArray(40);
-                    var delta = array.Length / comm.Size;
+                    var array = Sequential.GenerateRandomIntArray(50);
+                    var delta = Convert.ToInt32(Math.Ceiling(array.Length / (comm.Size - 1d)));
                     var (leftSide, rightSide) = DivideArray(array);
                     var depth = 0;
+
+                    Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}. Divide! (1, 2)");
 
                     comm.Send((leftSide, delta, comm.Rank, depth), 1, 0);
                     comm.Send((rightSide, delta, comm.Rank, depth), 2, 0);
 
-                    int[] resultLeft = new int[array.Length / 2];
-                    int[] resultRight = new int[array.Length / 2];
+                    var resultLeft = new int[leftSide.Length];
+                    var resultRight = new int[rightSide.Length];
 
                     comm.Receive(1, 0, ref resultLeft);
                     comm.Receive(2, 0, ref resultRight);
 
-                    var concat = resultLeft.Concat(resultRight);
-
-                    var output = Sequential.BubbleSort(array);
-
+                    var concat = resultLeft.Concat(resultRight).ToArray();
+                    var output = Sequential.BubbleSort(concat);
                     Console.WriteLine(String.Join(", ", output));
                 }
                 else
                 {
                     var (array, delta, dad, depth) = comm.Receive<(int[], int, int, int)>(Communicator.anySource, 0);
-                    if (array.Length <= delta || (comm.Rank + (4 + depth)) > comm.Size - 1)
+                    var leftChild = 0;
+                    var rightChild = 0;
+                    if (comm.Rank % 2 == 0) // Rank é par
                     {
+                        leftChild = comm.Rank + 3 + depth;
+                        rightChild = comm.Rank + 4 + depth;
+                    }
+                    else
+                    {
+                        leftChild = comm.Rank + 2 + depth;
+                        rightChild = comm.Rank + 3 + depth;
+                    }
+
+                    if (array.Length <= delta || (leftChild >= comm.Size) || (rightChild >= comm.Size))
+                    {
+                        Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}, dad: {dad}. Conquer!");
                         var output = Sequential.BubbleSort(array);
                         comm.Send(output, dad, 0);
                     }
                     else
                     {
-                        var leftChild = 0;
-                        var rightChild = 0;
-                        if (comm.Rank % 2 == 0) // Rank é par
-                        {
-                            leftChild = comm.Rank + (3 + depth);
-                            rightChild = comm.Rank + (4 + depth);
-                        }
-                        else
-                        {
-                            leftChild = comm.Rank + (2 + depth);
-                            rightChild = comm.Rank + (3 + depth);
-                        }
-
-                        //Console.WriteLine("Rank " + comm.Rank);
-                        //Console.WriteLine("Left " + leftChild);
-                        //Console.WriteLine("Right " + rightChild);
+                        Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}, dad: {dad}. Divide! ({leftChild}, {rightChild})");
 
                         var (leftSide, rightSide) = DivideArray(array);
-
                         comm.Send((leftSide, delta, comm.Rank, depth + 1), leftChild, 0);
                         comm.Send((rightSide, delta, comm.Rank, depth + 1), rightChild, 0);
 
-                        int[] resultLeft = new int[delta * 2]; // Needs to be better
-                        int[] resultRight = new int[delta * 2]; // Needs to be better
+                        var resultLeft = new int[leftSide.Length];
+                        var resultRight = new int[rightSide.Length];
 
                         comm.Receive(leftChild, 0, ref resultLeft);
                         comm.Receive(rightChild, 0, ref resultRight);
+
                         var concat = resultLeft.Concat(resultRight).ToArray();
-
                         var output = Sequential.BubbleSort(concat);
-
                         comm.Send(output, dad, 0);
                     }
                 }
