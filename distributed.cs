@@ -215,6 +215,25 @@ namespace DotNetMPI
             return (leftSide, rightSide);
         }
 
+        private static int[] Interleaving(int[] arr1, int[] arr2)
+        {
+            var vector = arr1.Concat(arr2).ToArray();
+            var size = vector.Length;
+            var result = new int[size];
+            var i1 = 0;
+            var i2 = size / 2;
+
+            for (var i_aux = 0; i_aux < size; i_aux++)
+            {
+                if ((i1 < size / 2) && ((i2 >= size) || (vector[i1] <= vector[i2])))
+                    result[i_aux] = vector[i1++];
+                else
+                    result[i_aux] = vector[i2++];
+            }
+
+            return result;
+        }
+
         public static void BubbleSort(int size)
         {
             MPI.Environment.Run(comm =>
@@ -223,7 +242,7 @@ namespace DotNetMPI
                 {
                     var inputFilePath = $"input_file_{size}.json";
                     if (!File.Exists(inputFilePath))
-                        File.WriteAllText(inputFilePath, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(size)));
+                        File.WriteAllText(inputFilePath, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(size).OrderByDescending(x => x)));
 
                     var array = JsonSerializer.Deserialize<int[]>(File.ReadAllText(inputFilePath));
                     var delta = Convert.ToInt32(Math.Ceiling(array!.Length / (comm.Size - 1d)));
@@ -234,15 +253,13 @@ namespace DotNetMPI
                     comm.Send((leftSide, delta, comm.Rank), 1, 0);
                     comm.Send((rightSide, delta, comm.Rank), 2, 0);
 
-                    var resultLeft = new int[leftSide.Length];
-                    var resultRight = new int[rightSide.Length];
+                    var leftResult = new int[leftSide.Length];
+                    var rightResult = new int[rightSide.Length];
 
-                    comm.Receive(1, 0, ref resultLeft);
-                    comm.Receive(2, 0, ref resultRight);
+                    comm.Receive(1, 0, ref leftResult);
+                    comm.Receive(2, 0, ref rightResult);
 
-                    var concat = resultLeft.Concat(resultRight).ToArray();
-                    var output = Sequential.BubbleSort(concat);
-
+                    var output = Interleaving(leftResult, rightResult);
                     File.WriteAllText($"output_distributed_{size}.json", JsonSerializer.Serialize(output));
                 }
                 else
@@ -265,14 +282,13 @@ namespace DotNetMPI
                         comm.Send((leftSide, delta, comm.Rank), leftChild, 0);
                         comm.Send((rightSide, delta, comm.Rank), rightChild, 0);
 
-                        var resultLeft = new int[leftSide.Length];
-                        var resultRight = new int[rightSide.Length];
+                        var leftResult = new int[leftSide.Length];
+                        var rightResult = new int[rightSide.Length];
 
-                        comm.Receive(leftChild, 0, ref resultLeft);
-                        comm.Receive(rightChild, 0, ref resultRight);
+                        comm.Receive(leftChild, 0, ref leftResult);
+                        comm.Receive(rightChild, 0, ref rightResult);
 
-                        var concat = resultLeft.Concat(resultRight).ToArray();
-                        var output = Sequential.BubbleSort(concat);
+                        var output = Interleaving(leftResult, rightResult);
                         comm.Send(output, dad, 0);
                     }
                 }

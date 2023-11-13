@@ -31,7 +31,7 @@ namespace DotNetMPI
                         var size = Convert.ToInt32(extraParams);
                         var inputFilePath = $"input_file_{size}.json";
                         if (!File.Exists(inputFilePath))
-                            File.WriteAllText(inputFilePath, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(size)));
+                            File.WriteAllText(inputFilePath, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(size).OrderByDescending(x => x)));
 
                         var array = JsonSerializer.Deserialize<int[]>(File.ReadAllText(inputFilePath));
                         var sorted = Sequential.BubbleSort(array!);
