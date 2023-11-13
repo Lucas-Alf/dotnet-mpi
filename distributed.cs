@@ -10,6 +10,7 @@ using System.Text.Json;
 using TorchSharp;
 using TorchSharp.Modules;
 using MPI;
+using System.Text.Json.Serialization;
 
 namespace DotNetMPI
 {
@@ -214,17 +215,21 @@ namespace DotNetMPI
             return (leftSide, rightSide);
         }
 
-        public static void BubbleSort()
+        public static void BubbleSort(int size)
         {
             MPI.Environment.Run(comm =>
             {
                 if (comm.Rank == 0)
                 {
-                    var array = Sequential.GenerateRandomIntArray(50);
-                    var delta = Convert.ToInt32(Math.Ceiling(array.Length / (comm.Size - 1d)));
+                    var inputFilePath = $"input_file_{size}.json";
+                    if (!File.Exists(inputFilePath))
+                        File.WriteAllText(inputFilePath, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(size)));
+
+                    var array = JsonSerializer.Deserialize<int[]>(File.ReadAllText(inputFilePath));
+                    var delta = Convert.ToInt32(Math.Ceiling(array!.Length / (comm.Size - 1d)));
                     var (leftSide, rightSide) = DivideArray(array);
 
-                    Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}. Divide! (1, 2)");
+                    // Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}. Divide! (1, 2)");
 
                     comm.Send((leftSide, delta, comm.Rank), 1, 0);
                     comm.Send((rightSide, delta, comm.Rank), 2, 0);
@@ -237,7 +242,8 @@ namespace DotNetMPI
 
                     var concat = resultLeft.Concat(resultRight).ToArray();
                     var output = Sequential.BubbleSort(concat);
-                    Console.WriteLine(String.Join(", ", output));
+
+                    File.WriteAllText($"output_distributed_{size}.json", JsonSerializer.Serialize(output));
                 }
                 else
                 {
@@ -247,13 +253,13 @@ namespace DotNetMPI
 
                     if (array.Length <= delta || (leftChild >= comm.Size) || (rightChild >= comm.Size))
                     {
-                        Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}, dad: {dad}. Conquer!");
+                        // Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}, dad: {dad}. Conquer!");
                         var output = Sequential.BubbleSort(array);
                         comm.Send(output, dad, 0);
                     }
                     else
                     {
-                        Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}, dad: {dad}. Divide! ({leftChild}, {rightChild})");
+                        // Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}, dad: {dad}. Divide! ({leftChild}, {rightChild})");
 
                         var (leftSide, rightSide) = DivideArray(array);
                         comm.Send((leftSide, delta, comm.Rank), leftChild, 0);
