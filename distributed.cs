@@ -223,12 +223,11 @@ namespace DotNetMPI
                     var array = Sequential.GenerateRandomIntArray(50);
                     var delta = Convert.ToInt32(Math.Ceiling(array.Length / (comm.Size - 1d)));
                     var (leftSide, rightSide) = DivideArray(array);
-                    var depth = 0;
 
                     Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}. Divide! (1, 2)");
 
-                    comm.Send((leftSide, delta, comm.Rank, depth), 1, 0);
-                    comm.Send((rightSide, delta, comm.Rank, depth), 2, 0);
+                    comm.Send((leftSide, delta, comm.Rank), 1, 0);
+                    comm.Send((rightSide, delta, comm.Rank), 2, 0);
 
                     var resultLeft = new int[leftSide.Length];
                     var resultRight = new int[rightSide.Length];
@@ -242,19 +241,9 @@ namespace DotNetMPI
                 }
                 else
                 {
-                    var (array, delta, dad, depth) = comm.Receive<(int[], int, int, int)>(Communicator.anySource, 0);
-                    var leftChild = 0;
-                    var rightChild = 0;
-                    if (comm.Rank % 2 == 0) // Rank é par
-                    {
-                        leftChild = comm.Rank + 3 + depth;
-                        rightChild = comm.Rank + 4 + depth;
-                    }
-                    else
-                    {
-                        leftChild = comm.Rank + 2 + depth;
-                        rightChild = comm.Rank + 3 + depth;
-                    }
+                    var (array, delta, dad) = comm.Receive<(int[], int, int)>(Communicator.anySource, 0);
+                    var leftChild = comm.Rank * 2 + 1;
+                    var rightChild = comm.Rank * 2 + 2;
 
                     if (array.Length <= delta || (leftChild >= comm.Size) || (rightChild >= comm.Size))
                     {
@@ -267,8 +256,8 @@ namespace DotNetMPI
                         Console.WriteLine($"Rank: {comm.Rank}, size: {array.Length}, delta: {delta}, dad: {dad}. Divide! ({leftChild}, {rightChild})");
 
                         var (leftSide, rightSide) = DivideArray(array);
-                        comm.Send((leftSide, delta, comm.Rank, depth + 1), leftChild, 0);
-                        comm.Send((rightSide, delta, comm.Rank, depth + 1), rightChild, 0);
+                        comm.Send((leftSide, delta, comm.Rank), leftChild, 0);
+                        comm.Send((rightSide, delta, comm.Rank), rightChild, 0);
 
                         var resultLeft = new int[leftSide.Length];
                         var resultRight = new int[rightSide.Length];
