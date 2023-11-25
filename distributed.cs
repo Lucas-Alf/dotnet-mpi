@@ -294,5 +294,102 @@ namespace DotNetMPI
                 }
             });
         }
+
+        public static void ParallelPhases(int size)
+        {
+
+            MPI.Environment.Run(comm =>
+            {
+                if (comm.Rank == 0)
+                {
+                    var inputFilePath = $"input_file_{size}.json";
+                    if (!File.Exists(inputFilePath))
+                        File.WriteAllText(inputFilePath, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(size).OrderByDescending(x => x)));
+                    var array = JsonSerializer.Deserialize<int[]>(File.ReadAllText(inputFilePath));
+
+                    var sliceSize = Convert.ToInt32(Math.Floor((double)(array.Length / comm.Size)));
+
+                    var slice = array.Take(sliceSize).ToArray();
+                    comm.Send(slice, 0, 0);
+
+                    for (int i = 1; i <= comm.Size; i++)
+                    {
+                        slice = array.Skip(sliceSize * i).Take(sliceSize).ToArray();
+                        comm.Send(slice, i, 0);
+                    }
+
+                }
+                var received = comm.Receive<int[]>(0, 0);
+
+                Boolean finished = false;
+
+                while (!finished)
+                {
+                    // ordeno vetor local
+                    var output = Sequential.BubbleSort(received);
+
+                    // verifico condição de parada
+
+
+                    // se não for np-1, mando o meu maior elemento para a direita
+                    if (comm.Rank != comm.Size - 1)
+                    {
+                        comm.Send(output.Last(), comm.Rank + 1, 0);
+                    }
+
+                    // se não for 0, recebo o maior elemento da esquerda
+                    var neighbour = 0;
+                    if (comm.Rank != 0)
+                    {
+                        neighbour = comm.Receive<int>(comm.Rank - 1, 0);
+                    }
+
+                    // comparo se o meu menor elemento é maior do que o maior elemento recebido (se sim, estou ordenado em relação ao meu vizinho)
+                    Boolean ordered = false;
+                    if (output.First() > neighbour)
+                    {
+                        ordered = true;
+                    };
+
+                    // compartilho o meu estado com todos os processos
+                    /////// MPI_Bcast(ordered);
+
+                    // se todos estiverem ordenados com seus vizinhos, a ordenação do vetor global está pronta ( pronto = TRUE, break)
+
+                    // senão continuo
+
+                    // troco valores para convergir
+
+                    // se não for o 0, mando os menores valores do meu vetor para a esquerda
+                    var slice = 5;
+                    if (comm.Rank != 0)
+                    {
+                        comm.Send(output.Take(slice), comm.Rank - 1, 0);
+                    }
+
+                    // se não for np-1, recebo os menores valores da direita
+                    var valuesNeighbour = new int[slice];
+                    if (comm.Rank != comm.Size - 1)
+                    {
+                        valuesNeighbour = comm.Receive<int[]>(comm.Rank - 1, 0);
+                    }
+
+                    // ordeno estes valores com a parte mais alta do meu vetor local
+
+
+                    // devolvo os valores que recebi para a direita
+                    if (comm.Rank != comm.Size - 1)
+                    {
+                        //comm.Send(IDK, comm.Rank + 1, 0);
+                    }
+
+                    // se não for o 0, recebo de volta os maiores valores da esquerda
+                    if (comm.Rank != 0)
+                    {
+                        //comm.Receive<int[]>(comm.Rank + 1, 0);
+                    }
+                }
+            });
+        }
     }
 }

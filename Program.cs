@@ -44,6 +44,15 @@ namespace DotNetMPI
                         Distributed.BubbleSort(size);
                     }
                     break;
+                case ("-sequential", "-parallelPhases"):
+                    Console.WriteLine("Sorry, this in not implemented");
+                    break;
+                case ("-distributed", "-parallelPhases"):
+                    {
+                        var size = Convert.ToInt32(extraParams);
+                        Distributed.ParallelPhases(size);
+                    }
+                    break;
                 default:
                     throw new Exception("Invalid mode");
             }
