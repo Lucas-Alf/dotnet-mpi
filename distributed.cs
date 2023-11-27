@@ -297,7 +297,6 @@ namespace DotNetMPI
 
         public static void ParallelPhases(int size)
         {
-
             MPI.Environment.Run(comm =>
             {
                 var inputFile = $"input_file_{comm.Rank}_{size}.json";
@@ -315,37 +314,34 @@ namespace DotNetMPI
                 {
                     // ordeno vetor local
                     var output = Sequential.BubbleSort(array);
-                    Console.WriteLine($"Rank{comm.Rank}, array: {String.Join(", ", output)}");
+                    Console.WriteLine($"Rank {comm.Rank}, array: {String.Join(", ", output)}");
 
                     // verifico condição de parada
                     if (test == 10)
                         finished = true;
-                    // IDK
 
-                    //// se não for np-1, mando o meu maior elemento para a direita
+                    // se não for np-1, mando o meu maior elemento para a direita
                     if (comm.Rank != comm.Size - 1)
                         comm.Send(output.Last(), comm.Rank + 1, 0);
 
-                    //// se não for 0, recebo o maior elemento da esquerda
+                    // se não for 0, recebo o maior elemento da esquerda
                     var neighbor = 0;
                     if (comm.Rank != 0)
                         neighbor = comm.Receive<int>(comm.Rank - 1, 0);
 
-                    //// comparo se o meu menor elemento é maior do que o maior elemento recebido (se sim, estou ordenado em relação ao meu vizinho)
+                    // comparo se o meu menor elemento é maior do que o maior elemento recebido (se sim, estou ordenado em relação ao meu vizinho)
                     var orderedToNeighbor = new bool[comm.Size];
                     if (output.First() >= neighbor)
                         orderedToNeighbor[comm.Rank] = true;
 
-                    //// compartilho o meu estado com todos os processos
-                    //MPI_Bcast(orderedToNeighbor);
-
+                    // compartilho o meu estado com todos os processos
                     for (int i = 0; i < comm.Size; i++)
                         comm.Broadcast(ref orderedToNeighbor[i], i);
 
-                    //// se todos estiverem ordenados com seus vizinhos, a ordenação do vetor global está pronta ( pronto = TRUE, break)
+                    // se todos estiverem ordenados com seus vizinhos, a ordenação do vetor global está pronta ( pronto = TRUE, break)
                     if (orderedToNeighbor.All(x => x == true))
                     {
-                        Console.WriteLine($"BREAK Rank{comm.Rank}");
+                        Console.WriteLine($"BREAK Rank {comm.Rank}");
                         finished = true;
                         break;
                     }
@@ -357,7 +353,7 @@ namespace DotNetMPI
                     if (comm.Rank != 0)
                         comm.Send(output.Take(slice).ToArray(), comm.Rank - 1, 0);
 
-                    //// se não for np-1, recebo os menores valores da direita
+                    // se não for np-1, recebo os menores valores da direita
                     var valuesNeighbor = new int[slice];
                     if (comm.Rank != comm.Size - 1)
                     {
