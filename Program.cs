@@ -45,7 +45,7 @@ namespace DotNetMPI
                     }
                     break;
                 case ("-sequential", "-parallelPhases"):
-                    Console.WriteLine("Sorry, this in not implemented");
+                    Console.WriteLine("Sorry, this is not implemented");
                     break;
                 case ("-distributed", "-parallelPhases"):
                     {

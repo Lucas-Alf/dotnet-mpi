@@ -301,11 +301,9 @@ namespace DotNetMPI
             MPI.Environment.Run(comm =>
             {
                 var sliceSize = Convert.ToInt32(Math.Floor((double)(size / comm.Size)));
-
                 var array = Sequential.GenerateRandomIntArray(sliceSize).ToArray();
-
-                Boolean finished = false;
-                int teste = 0;
+                var finished = false;
+                var test = 0;
 
                 while (!finished)
                 {
@@ -314,94 +312,76 @@ namespace DotNetMPI
                     Console.WriteLine($"Rank{comm.Rank}, array: {String.Join(", ", output)}");
 
                     // verifico condição de parada
-                    if (teste == 10)
-                    {
+                    if (test == 10)
                         finished = true;
-                    }
                     // IDK
 
                     //// se não for np-1, mando o meu maior elemento para a direita
                     if (comm.Rank != comm.Size - 1)
-                    {
                         comm.Send(output.Last(), comm.Rank + 1, 0);
-                    }
 
                     //// se não for 0, recebo o maior elemento da esquerda
-                    var neighbour = 0;
+                    var neighbor = 0;
                     if (comm.Rank != 0)
-                    {
-                        neighbour = comm.Receive<int>(comm.Rank - 1, 0);
-                    }
+                        neighbor = comm.Receive<int>(comm.Rank - 1, 0);
 
                     //// comparo se o meu menor elemento é maior do que o maior elemento recebido (se sim, estou ordenado em relação ao meu vizinho)
-                    var orderedToNeighbour = new bool[comm.Size];
-                    if (output.First() >= neighbour)
-                    {
-                        orderedToNeighbour[comm.Rank] = true;
-                    };
+                    var orderedToNeighbor = new bool[comm.Size];
+                    if (output.First() >= neighbor)
+                        orderedToNeighbor[comm.Rank] = true;
 
                     //// compartilho o meu estado com todos os processos
-                    //MPI_Bcast(orderedToNeighbour);
+                    //MPI_Bcast(orderedToNeighbor);
 
                     for (int i = 0; i < comm.Size; i++)
-                    {
-                        comm.Broadcast(ref orderedToNeighbour[i], i);
-                    }
+                        comm.Broadcast(ref orderedToNeighbor[i], i);
 
                     //// se todos estiverem ordenados com seus vizinhos, a ordenação do vetor global está pronta ( pronto = TRUE, break)
-                    if (orderedToNeighbour.All(x => x == true))
+                    if (orderedToNeighbor.All(x => x == true))
                     {
                         Console.WriteLine($"BREAK Rank{comm.Rank}");
                         finished = true;
                         break;
                     }
-                    //// senão continuo
 
+                    // senão continuo
                     // troco valores para convergir
-
-                    //// se não for o 0, mando os menores valores do meu vetor para a esquerda
+                    // se não for o 0, mando os menores valores do meu vetor para a esquerda
                     var slice = 5; // Variar esse valor
                     if (comm.Rank != 0)
-                    {
                         comm.Send(output.Take(slice).ToArray(), comm.Rank - 1, 0);
-                    }
 
                     //// se não for np-1, recebo os menores valores da direita
-                    var valuesNeighbour = new int[slice];
+                    var valuesNeighbor = new int[slice];
                     if (comm.Rank != comm.Size - 1)
                     {
-                        comm.Receive(comm.Rank + 1, 0, ref valuesNeighbour);
+                        comm.Receive(comm.Rank + 1, 0, ref valuesNeighbor);
 
-                        ////// ordeno estes valores com a parte mais alta do meu vetor local
+                        // ordeno estes valores com a parte mais alta do meu vetor local
                         var greaterSlice = output.Skip(output.Length - slice).Take(slice).ToArray();
-                        var combined = Interleaving(greaterSlice, valuesNeighbour);
+                        var combined = Interleaving(greaterSlice, valuesNeighbor);
                         combined = Sequential.BubbleSort(combined);
 
-                        //Console.WriteLine($"Rank{comm.Rank}, combined: {String.Join(", ", combined)} \n");
+                        // Console.WriteLine($"Rank{comm.Rank}, combined: {String.Join(", ", combined)} \n");
 
-                        ////// Coloca os valores de volta no correto
+                        // Coloca os valores de volta no correto
                         for (int i = 0; i < slice; i++)
-                        {
                             array[array.Length - slice + i] = combined[i];
-                        }
 
-                        ////// devolvo os valores que recebi para a direita
+                        // devolvo os valores que recebi para a direita
                         comm.Send(combined.Skip(slice).Take(slice).ToArray(), comm.Rank + 1, 0);
                     }
 
-                    //// se não for o 0, recebo de volta os maiores valores da esquerda
+                    // se não for o 0, recebo de volta os maiores valores da esquerda
                     var valuesBack = new int[slice];
                     if (comm.Rank != 0)
                     {
                         comm.Receive(comm.Rank - 1, 0, ref valuesBack);
-
                         for (int i = 0; i < slice; i++)
-                        {
                             array[i] = valuesBack[i];
-                        }
                     }
 
-                    teste++;
+                    test++;
                 }
             });
         }
