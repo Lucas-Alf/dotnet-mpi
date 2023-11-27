@@ -302,8 +302,16 @@ namespace DotNetMPI
                 var inputFile = $"input_file_{comm.Rank}_{size}.json";
                 if (!File.Exists(inputFile))
                 {
-                    var sliceSize = Convert.ToInt32(Math.Floor((double)(size / comm.Size)));
-                    File.WriteAllText(inputFile, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(sliceSize).OrderByDescending(x => x)));
+                    var sliceSize = (double)(size / comm.Size);
+                    var roundedValue = Math.Ceiling(sliceSize);
+                    if (comm.Rank == comm.Size)
+                    {
+                        roundedValue += (sliceSize - roundedValue) * comm.Size;
+                        roundedValue = Math.Floor(roundedValue);
+                    }
+                    
+                    var temp = Sequential.GenerateRandomIntArray((int)roundedValue).OrderByDescending(x => x);
+                    File.WriteAllText(inputFile, JsonSerializer.Serialize(temp));
                 }
 
                 var array = JsonSerializer.Deserialize<int[]>(File.ReadAllText(inputFile));
