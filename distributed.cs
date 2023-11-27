@@ -349,7 +349,7 @@ namespace DotNetMPI
                     // se todos estiverem ordenados com seus vizinhos, a ordenação do vetor global está pronta ( pronto = TRUE, break)
                     if (orderedToNeighbor.All(x => x == true))
                     {
-                        Console.WriteLine($"Result rank {comm.Rank}: {String.Join(", ", output)}");
+                        Console.WriteLine($"Rank {comm.Rank} size {output.Length}: {String.Join(", ", output)}");
                         finished = true;
                         break;
                     }
