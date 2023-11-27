@@ -314,7 +314,7 @@ namespace DotNetMPI
                 {
                     // ordeno vetor local
                     var output = Sequential.BubbleSort(array);
-                    Console.WriteLine($"Rank {comm.Rank}, array: {String.Join(", ", output)}");
+                    // Console.WriteLine($"Rank {comm.Rank}, array: {String.Join(", ", output)}");
 
                     // verifico condição de parada
                     if (test == 10)
@@ -341,7 +341,7 @@ namespace DotNetMPI
                     // se todos estiverem ordenados com seus vizinhos, a ordenação do vetor global está pronta ( pronto = TRUE, break)
                     if (orderedToNeighbor.All(x => x == true))
                     {
-                        Console.WriteLine($"BREAK Rank {comm.Rank}");
+                        Console.WriteLine($"Result rank {comm.Rank}: {String.Join(", ", output)}");
                         finished = true;
                         break;
                     }
