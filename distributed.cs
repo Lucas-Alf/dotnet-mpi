@@ -313,17 +313,12 @@ namespace DotNetMPI
 
                 var array = JsonSerializer.Deserialize<int[]>(File.ReadAllText(inputFile));
                 var finished = false;
-                var test = 0;
 
                 while (!finished)
                 {
                     // ordeno vetor local
                     var output = Sequential.BubbleSort(array);
                     // Console.WriteLine($"Rank {comm.Rank}, array: {String.Join(", ", output)}");
-
-                    // verifico condição de parada
-                    if (test == 10)
-                        finished = true;
 
                     // se não for np-1, mando o meu maior elemento para a direita
                     if (comm.Rank != comm.Size - 1)
@@ -387,8 +382,6 @@ namespace DotNetMPI
                         for (int i = 0; i < slice; i++)
                             array[i] = valuesBack[i];
                     }
-
-                    test++;
                 }
             });
         }
