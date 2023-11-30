@@ -304,8 +304,8 @@ namespace DotNetMPI
                 {
                     var rawSize = (double)size / comm.Size;
                     var roundedValue = Math.Floor(rawSize);
-                    if (comm.Rank == (comm.Size - 1))
-                        roundedValue = Math.Round(roundedValue + (rawSize - roundedValue) * comm.Size);
+                    // if (comm.Rank == (comm.Size - 1))
+                        // roundedValue = Math.Round(roundedValue + (rawSize - roundedValue) * comm.Size);
 
                     // Console.WriteLine($"rank: {comm.Rank} size: {roundedValue}");
                     var temp = Sequential.GenerateRandomIntArray((int)roundedValue).OrderByDescending(x => x);
