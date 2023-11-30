@@ -14,5 +14,5 @@ dotnet publish -c Release -r linux-x64 --self-contained -p:PublishReadyToRun=tru
 
 ### Run on LAD
 ```
-ladrun -n <number-of-processes> ./DLinq <file> <batch-size>
+ladrun -np <number-of-processes> ./DLinq <file> <batch-size>
 ```

@@ -299,7 +299,7 @@ namespace DotNetMPI
         {
             MPI.Environment.Run(comm =>
             {
-                var inputFile = $"input/input_file_{comm.Rank}_{size}.json";
+                var inputFile = $"input/input_file_{comm.Rank}_{comm.Size}_{size}.json";
                 if (!File.Exists(inputFile))
                 {
                     var rawSize = (double)size / comm.Size;
@@ -343,7 +343,7 @@ namespace DotNetMPI
                     if (orderedToNeighbor.All(x => x == true))
                     {
                         // Console.WriteLine($"Rank {comm.Rank} size {output.Length}: {String.Join(", ", output)}");
-                        var outputFile = $"output/output_file_{comm.Rank}_{size}.json";
+                        var outputFile = $"output/output_file_{comm.Rank}_{comm.Size}_{size}.json";
                         File.WriteAllText(outputFile, JsonSerializer.Serialize(new { 
                             rank = comm.Rank,
                             size = output.Length,
@@ -357,7 +357,9 @@ namespace DotNetMPI
                     // senão continuo
                     // troco valores para convergir
                     // se não for o 0, mando os menores valores do meu vetor para a esquerda
+                    // var slice = Convert.ToInt32(output.Length * slicePercent);
                     var slice = Convert.ToInt32(output.Length * slicePercent);
+                    // Console.WriteLine($"rank: {comm.Rank} slice: {slice}");
                     if (comm.Rank != 0)
                         comm.Send(output.Take(slice).ToArray(), comm.Rank - 1, 0);
 
