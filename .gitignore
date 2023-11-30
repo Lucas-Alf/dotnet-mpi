@@ -476,4 +476,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-input_file_*
+/input
+/output

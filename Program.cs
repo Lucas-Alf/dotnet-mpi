@@ -17,7 +17,6 @@ namespace DotNetMPI
 
             var mode = args[0];
             var application = args[1];
-            var extraParams = args[2];
             switch (mode, application)
             {
                 case ("-sequential", "-imageRecognition"):
@@ -28,7 +27,7 @@ namespace DotNetMPI
                     break;
                 case ("-sequential", "-bubbleSort"):
                     {
-                        var size = Convert.ToInt32(extraParams);
+                        var size = Convert.ToInt32(args[2]);
                         var inputFilePath = $"input_file_{size}.json";
                         if (!File.Exists(inputFilePath))
                             File.WriteAllText(inputFilePath, JsonSerializer.Serialize(Sequential.GenerateRandomIntArray(size).OrderByDescending(x => x)));
@@ -40,7 +39,7 @@ namespace DotNetMPI
                     break;
                 case ("-distributed", "-bubbleSort"):
                     {
-                        var size = Convert.ToInt32(extraParams);
+                        var size = Convert.ToInt32(args[2]);
                         Distributed.BubbleSort(size);
                     }
                     break;
@@ -49,8 +48,11 @@ namespace DotNetMPI
                     break;
                 case ("-distributed", "-parallelPhases"):
                     {
-                        var size = Convert.ToInt32(extraParams);
-                        Distributed.ParallelPhases(size);
+                        var size = Convert.ToInt32(args[2]);
+                        var slicePercent = Convert.ToDecimal(args[3]);
+                        Directory.CreateDirectory("input");
+                        Directory.CreateDirectory("output");
+                        Distributed.ParallelPhases(size, slicePercent);
                     }
                     break;
                 default:

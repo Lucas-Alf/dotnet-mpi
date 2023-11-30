@@ -295,18 +295,19 @@ namespace DotNetMPI
             });
         }
 
-        public static void ParallelPhases(int size)
+        public static void ParallelPhases(int size, decimal slicePercent)
         {
             MPI.Environment.Run(comm =>
             {
-                var inputFile = $"input_file_{comm.Rank}_{size}.json";
+                var inputFile = $"input/input_file_{comm.Rank}_{size}.json";
                 if (!File.Exists(inputFile))
                 {
                     var rawSize = (double)size / comm.Size;
                     var roundedValue = Math.Floor(rawSize);
                     if (comm.Rank == (comm.Size - 1))
-                        roundedValue += (rawSize - roundedValue) * comm.Size;
+                        roundedValue = Math.Round(roundedValue + (rawSize - roundedValue) * comm.Size);
 
+                    // Console.WriteLine($"rank: {comm.Rank} size: {roundedValue}");
                     var temp = Sequential.GenerateRandomIntArray((int)roundedValue).OrderByDescending(x => x);
                     File.WriteAllText(inputFile, JsonSerializer.Serialize(temp));
                 }
@@ -341,7 +342,14 @@ namespace DotNetMPI
                     // se todos estiverem ordenados com seus vizinhos, a ordenação do vetor global está pronta ( pronto = TRUE, break)
                     if (orderedToNeighbor.All(x => x == true))
                     {
-                        Console.WriteLine($"Rank {comm.Rank} size {output.Length}: {String.Join(", ", output)}");
+                        // Console.WriteLine($"Rank {comm.Rank} size {output.Length}: {String.Join(", ", output)}");
+                        var outputFile = $"output/output_file_{comm.Rank}_{size}.json";
+                        File.WriteAllText(outputFile, JsonSerializer.Serialize(new { 
+                            rank = comm.Rank,
+                            size = output.Length,
+                            result = output 
+                        }));
+
                         finished = true;
                         break;
                     }
@@ -349,7 +357,7 @@ namespace DotNetMPI
                     // senão continuo
                     // troco valores para convergir
                     // se não for o 0, mando os menores valores do meu vetor para a esquerda
-                    var slice = 5; // Variar esse valor
+                    var slice = Convert.ToInt32(output.Length * slicePercent);
                     if (comm.Rank != 0)
                         comm.Send(output.Take(slice).ToArray(), comm.Rank - 1, 0);
 
@@ -362,7 +370,7 @@ namespace DotNetMPI
                         // ordeno estes valores com a parte mais alta do meu vetor local
                         var greaterSlice = output.Skip(output.Length - slice).Take(slice).ToArray();
                         var combined = Interleaving(greaterSlice, valuesNeighbor);
-                        combined = Sequential.BubbleSort(combined);
+                        // combined = Sequential.BubbleSort(combined);
 
                         // Console.WriteLine($"Rank{comm.Rank}, combined: {String.Join(", ", combined)} \n");
 
